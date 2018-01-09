@@ -1,0 +1,22 @@
+version: "3"
+
+services:
+  dito-mongodb:
+    image: mongo:3.6
+    volumes:
+      - ./mongo/data:/data/db
+    container_name: "dito-mongodb"
+  dito-api:
+    image: docker.io/pdropaiva/dito-api:0.0.2
+    container_name: "dito-api"
+    ports:
+      - 5000:80
+    depends_on:
+      - dito-mongodb
+  dito-autocomplete:
+    image: docker.io/pdropaiva/dito-autocomplete:0.0.1
+    container_name: "dito-autocomplete"
+    ports:
+      - 8080:80
+    depends_on:
+      - dito-api

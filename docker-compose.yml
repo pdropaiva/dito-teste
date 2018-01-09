@@ -11,12 +11,12 @@ services:
     container_name: "dito-api"
     ports:
       - 5000:80
-    depends_on:
-      - dito-mongodb
+    links:
+      - dito-mongodb:dito-mongodb
   dito-autocomplete:
     image: docker.io/pdropaiva/dito-autocomplete:0.0.1
     container_name: "dito-autocomplete"
     ports:
       - 8080:80
-    depends_on:
-      - dito-api
+    links:
+      - dito-api:dito-api

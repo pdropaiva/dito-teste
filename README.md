@@ -20,7 +20,7 @@ Para gerar eventos aleatórios de teste acessar a a url http://localhost:8080/di
 
   - Primeiro para facilitar devemos adicionar o nosso id do projeto e a zona onde o cluster será criado.
 
-    gcloud config set project <PROJECT_ID>
+    gcloud config set project <PROJECT_ID>  
     gcloud config set compute/zone us-central1-b
 
   - Criar um cluster para o projeto (Com três nodes)
@@ -29,7 +29,7 @@ Para gerar eventos aleatórios de teste acessar a a url http://localhost:8080/di
 
   - Comandos para listar os clusters criados e verificar detalhes de um cluster
 
-    gcloud container clusters list
+    gcloud container clusters list  
     gcloud container clusters describe dito-teste
 
   - Primeiro iremos criar o Deployment e o Service do mongodb (execute o próximo comando dentro da pasta kubernetes do projeto)
@@ -38,9 +38,9 @@ Para gerar eventos aleatórios de teste acessar a a url http://localhost:8080/di
 
   - Agora iremos criar o Deployment e o Service da nossa api (execute o próximo comando dentro da pasta kubernetes do projeto)
 
-    kubectl create -f api-deployment.yml
-    kubectl get pods
-    kubectl exec -it <POD-NAME> -c dito-api /bin/sh
+    kubectl create -f api-deployment.yml  
+    kubectl get pods  
+    kubectl exec -it <POD-NAME> -c dito-api /bin/sh  
     php artisan migrate
 
   - Agora iremos criar o Deployment e o Service do nosso web (autocomplete) (execute o próximo comando dentro da pasta kubernetes do projeto)

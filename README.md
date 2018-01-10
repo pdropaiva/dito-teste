@@ -35,14 +35,6 @@ Para gerar eventos aleatórios de teste acessar a a url http://localhost:8080/di
   - Primeiro iremos criar o Deployment e o Service do mongodb (execute o próximo comando dentro da pasta kubernetes do projeto)
 
     kubectl create -f mongodb-deployment.yml
-    kubectl get pods
-    kubectl exec -it <POD-NAME> -c dito-mongodb /bin/sh
-    mongo admin
-
-  - Deve-se copiar os dados do arquivo mongodb-setup.js e colar no terminal e depois sair comando
-
-    exit
-    exit
 
   - Agora iremos criar o Deployment e o Service da nossa api (execute o próximo comando dentro da pasta kubernetes do projeto)
 

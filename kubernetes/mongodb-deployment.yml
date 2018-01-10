@@ -43,7 +43,10 @@ spec:
     spec:
       containers:
       - name: dito-mongodb
-        image: docker.io/mongo:3.6
+        image: docker.io/pdropaiva/dito-mongo:0.0.1
+        env:
+          - name: "MONGO_INITDB_DATABASE"
+            value: "admin"
         ports:
         - containerPort: 27017
         volumeMounts:

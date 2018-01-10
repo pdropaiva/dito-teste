@@ -40,8 +40,9 @@ Para gerar eventos aleatórios de teste acessar a a url http://localhost:8080/di
 
     kubectl create -f api-deployment.yml  
     kubectl get pods  
-    kubectl exec -it <POD-NAME> -c dito-api /bin/sh  
-    php artisan migrate
+    kubectl exec -it <POD_NAME> -c dito-api /bin/sh  
+    php artisan migrate  
+    exit
 
   - Agora iremos criar o Deployment e o Service do nosso web (autocomplete) (execute o próximo comando dentro da pasta kubernetes do projeto)
 
@@ -50,8 +51,8 @@ Para gerar eventos aleatórios de teste acessar a a url http://localhost:8080/di
 ### Comandos úteis
 
   - kubectl get pods
-  - kubectl logs -f <POD-NAME>
-  - kubectl get service <SERVICE-NAME>
+  - kubectl logs -f <POD_NAME>
+  - kubectl get service <SERVICE_NAME>
   - kubectl proxy
 
 ### Retirando o projeto do ar para evitar custos, pois esse é apenas um projeto de teste

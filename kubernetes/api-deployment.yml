@@ -3,30 +3,30 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    name: dito-autocomplete
-  name: dito-autocomplete
+    name: dito-api
+  name: dito-api
 spec:
   ports:
     - port: 80
       name: "rest"
       targetPort: 80
   selector:
-    name: dito-autocomplete
+    name: dito-api
   type: LoadBalancer
 ---
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: dito-autocomplete
+  name: dito-api
 spec:
   replicas: 2
   template:
     metadata:
       labels:
-        name: dito-autocomplete
+        name: dito-api
     spec:
       containers:
-      - name: dito-autocomplete
-        image: docker.io/pdropaiva/dito-autocomplete:0.0.1
+      - name: dito-api
+        image: docker.io/pdropaiva/dito-api:0.0.2
         ports:
         - containerPort: 80

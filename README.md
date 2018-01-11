@@ -57,6 +57,6 @@ Para gerar eventos aleatórios de teste acessar a a url http://localhost:8080/di
 
 ### Retirando o projeto do ar para evitar custos, pois esse é apenas um projeto de teste
 
-  - kubectl delete service <SERVICE-NAME>
+  - kubectl delete service <SERVICE_NAME>
   - Aguarde a exclusão observando pelo comando gcloud compute forwarding-rules list
   - gcloud container clusters delete dito-teste

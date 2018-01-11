@@ -25,6 +25,9 @@ if(isset($_REQUEST['method']) && $_REQUEST['method'] == 'post') {
 
 } else {
 
+  unset($_REQUEST['url']);
+  unset($_REQUEST['method']);
+
   $query = http_build_query($_REQUEST);
 
   curl_setopt($ch, CURLOPT_URL, $url.'?'.$query);
